@@ -6,9 +6,17 @@ result = getCmd(SnmpEngine(),
 	ContextData(),
 	ObjectType(ObjectIdentity('SNMPv2-MIB', 'sysDescr', 0)))
 
-result2 = nextCmd ('1.3.6.1.2.1.2.2.1.2', lexicographicMode=False) # Не идти в глубину
+result2 = nextCmd('SNMPv2-MIB', 'sysDescr', '10.31.70.107', 161, 0, lexicographicMode=False) # Не идти в глубину
 
-snmp_object = ObjectIdentity('SNMPv2-MIB', 'sysDescr', 0) # По имени MIB-переменной
+print(result)
+print(result2)
+for i in result:
+    print(i)
 
-snmp_object = ObjectIdentity('1.3.6.1.2.1.2.2.1.2') # По значению MIB-переменной
+for j in result2:
+    print(j[1])
+
+#snmp_object = ObjectIdentity('SNMPv2-MIB', 'sysDescr', 0) # По имени MIB-переменной
+
+#snmp_object = ObjectIdentity('1.3.6.1.2.1.2.2.1.2') # По значению MIB-переменной
 
